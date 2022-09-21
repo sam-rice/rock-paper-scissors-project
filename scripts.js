@@ -1,25 +1,37 @@
 var currentGame;
-
-var humanPlayer;
+var user;
 var computerPlayer;
 
-
-
-//landing page, user creates avatar 
+//----------------LANDING PAGE----------------//
 
 function createHumanPlayer() {
-    humanPlayer = new Player ("Sam", "human emoji");
-    computerPlayer = new Player ("Computer", "comp emoji");
-    currentGame = new Game (humanPlayer, computerPlayer)
+  user = new Player ("Sam", "human emoji");
+  computerPlayer = new Player ("Computer", "comp emoji");
+  currentGame = new Game (user, computerPlayer)
 };
 
-//user chooses game type
+//----------------GAME-TYPE PAGE----------------//
 
 function startFirstGame(type) {
-    currentGame.gameType = type;
-}
+  currentGame.gameType = type;
+  //update DOM - relevant game page
+};
 
-//game page - basic
-//user selects move with humanPlayer.takeTurn(event);
+//----------------GAMEPLAY PAGE----------------//
 
+function announceUserWinner() {
+  console.log("user wins!")
+};
 
+function announceCompWinner() {
+  console.log("computer wins!")
+};
+
+function announceDraw() {
+  startNewGame();
+  console.log("draw!")
+};
+
+function startNewGame() {
+
+};
