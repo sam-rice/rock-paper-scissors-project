@@ -32,11 +32,11 @@ header {
   font-size: 2.2em;
   color: rgb(255, 136, 0);
   margin-top: -20px;
-  margin-bottom: 10px;
+  margin-bottom: -10px;
   height: 20%;
 }
 
-h2 {
+h2, h3 {
   font-family: 'MADEMirage-Black';
   color: rgb(255, 136, 0);
 }
@@ -50,38 +50,13 @@ main {
 
 .choose-name-grandparent {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  min-height: 25%;
-}
-
-.choose-name-parent {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  /* min-height: 25%; */
+  min-height: 100%;
 }
 
 .choose-game-grandparent {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 25%;
-}
-
-.choose-game-parent {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  align-items: center;
-  /* min-height: 25%; */
-  min-width: 80%;
-}
-
-.moves-grandparent {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -89,11 +64,41 @@ main {
   min-height: 100%;
 }
 
-.moves-grandparent h2 {
+.choose-name-parent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  min-height: 200px;
+}
+
+.name-form-div, .emoji-selector-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.choose-game-parent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  min-width: 80%;
+}
+
+.gameplay-page-grandparent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100%;
+}
+
+.gameplay-page-grandparent h2 {
   margin-bottom: 0px;
 }
 
-.moves-parent {
+.gameplay-page-parent {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
