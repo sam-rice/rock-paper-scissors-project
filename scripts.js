@@ -4,15 +4,19 @@ var computerPlayer;
 
 //----------------------QUERY SELECTORS----------------------//
 
+var namePage = document.getElementById("choose-name");
 var submitNameButton = document.getElementById("submit-name");
 var nameInput = document.getElementById("name-input");
 var emojiInput = document.getElementById("emojis");
 
-var namePage = document.getElementById("choose-name");
 var gameTypePage = document.getElementById("choose-game");
+var asideLeft = document.getElementById("aside-left");
+var asideRight = document.getElementById("aside-right");
+var basicButton = document.getElementById("basic-button");
+var advancedButton = document.getElementById("advanced-button");
 
-
-
+var gameplayPage = document.getElementById("gameplay-page");
+var changeGameButton = document.getElementById("change-game");
 
 
 
@@ -23,9 +27,24 @@ submitNameButton.addEventListener("click", function () {
   startNewGame();
   hide(namePage);
   show(gameTypePage);
+  show(asideLeft);
+  show(asideRight);
+  updateUserInfo();
 });
 
+basicButton.addEventListener("click", function () {
+  currentGame.gameType = "basic";
+  hide(gameTypePage);
+  show(gameplayPage);
+  show(changeGameButton);
+});
 
+advancedButton.addEventListener("click", function () {
+  currentGame.gameType = "advanced";
+  hide(gameTypePage);
+  show(gameplayPage);
+  show(changeGameButton); 
+});
 
 
 
@@ -38,18 +57,11 @@ submitNameButton.addEventListener("click", function () {
 
 function createHumanPlayer(name, emoji) {
   user = new Player (name, emoji);
-  computerPlayer = new Player ("Computer", "comp emoji");
+  computerPlayer = new Player ("Computer", "🖥");
 };
 
 function startNewGame() {
   currentGame = new Game (user, computerPlayer)
-};
-
-//GAME-TYPE PAGE
-
-function chooseGameType(type) {
-  currentGame.gameType = type;
-  //update DOM - relevant game page
 };
 
 //GAMEPLAY PAGE
@@ -78,9 +90,10 @@ function show(element) {
 
 //LANDING PAGE
 
-function displayGameTypePage() {
-
-}
+function updateUserInfo() {
+  document.getElementById("user-name").innerText = user.name;
+  document.getElementById("user-emoji").innerText = user.token;
+};
 
 
 

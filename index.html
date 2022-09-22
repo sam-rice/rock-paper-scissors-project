@@ -10,11 +10,11 @@
         <h1>paper, scissors, stone....</h1>
       </header>
       <main>
-        <aside id="aside-left">
+        <aside class="aside-left hidden" id="aside-left">
           <div class="aside-left-top">
             <span class="user-span">
-              <h2>User</h2>
-              <p>💂‍♀️</p>
+              <h2 id="user-name"></h2>
+              <p id="user-emoji"></p>
             </span>
             <span class="points-span">
               <p>rounds won: 0</p>
@@ -22,7 +22,7 @@
             </span>
           </div>
           <div class="aside-left-bottom">
-            <button id="change-game">change game type</button>
+            <button class="hidden" id="change-game">change game type</button>
           </div>
         </aside>
         <section class="center-container">
@@ -54,7 +54,7 @@
                 <p>stone beats scissors<br>
                 paper beats stone<br>
                 scissors beats paper</p>
-                <button class="game-type-buttons">basic</button>
+                <button class="game-type-buttons" id="basic-button">basic</button>
               </section>
               <section class="advanced-mode-select">
                 <h3>advanced</h3>
@@ -63,14 +63,14 @@
                   Scissors beats paper & matches<br>
                   Cup beats scissors & matches<br>
                   Matches beats paper & stone</p>
-                <button class="game-type-buttons">advanced</button>
+                <button class="game-type-buttons" id="advanced-button">advanced</button>
               </section>
             </div>
             <br>
           </div>
-          <div class="moves-grandparent hidden">
+          <div class="gameplay-page-grandparent hidden" id="gameplay-page">
             <h2>choose your move</h2>
-            <div class="moves-parent">
+            <div class="gameplay-page-parent">
               <img src="assets/stone-user.png" alt="stone" width="12%">
               <img src="assets/paper-user.png" alt="paper" width="12%">
               <img src="assets/scissors-user.png" alt="scissors" width="12%">
@@ -80,11 +80,11 @@
             <br>
           </div>
         </section>
-        <aside id="aside-right">
+        <aside class="aside-right hidden" id="aside-right">
           <div class="aside-right-top">
             <span class="user-span">
               <h2>Computer</h2>
-              <p>💂‍♀️</p>
+              <p>🖥</p>
             </span>
             <span class="points-span">
               <p>rounds won: 0</p>

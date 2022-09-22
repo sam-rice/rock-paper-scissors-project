@@ -87,7 +87,7 @@ main {
   min-width: 80%;
 }
 
-.moves-grandparent {
+.gameplay-page-grandparent {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -95,11 +95,11 @@ main {
   min-height: 100%;
 }
 
-.moves-grandparent h2 {
+.gameplay-page-grandparent h2 {
   margin-bottom: 0px;
 }
 
-.moves-parent {
+.gameplay-page-parent {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
