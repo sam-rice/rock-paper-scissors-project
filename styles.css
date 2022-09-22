@@ -1,0 +1,150 @@
+@font-face {
+  font-family: 'MADEMirage-Black';
+  src: url("assets/MADEMirage-Black.ttf.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: url("assets/Jost-VariableFont_wght.ttf") format('truetype'), url("assets/Jost-Italic-VariableFont_wght.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  background-image: url("assets/if_still1.jpeg");
+  background-repeat: repeat-y;
+  background-size: 115%;
+  background-position: center;
+}
+
+header {
+  font-family: 'MADEMirage-Black';
+  font-size: 2.2em;
+  color: rgb(255, 136, 0);
+  margin-top: -20px;
+  margin-bottom: 10px;
+  height: 20%;
+}
+
+h2 {
+  font-family: 'MADEMirage-Black';
+  color: rgb(255, 136, 0);
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-height: 80%;
+}
+
+.choose-name-grandparent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  min-height: 25%;
+}
+
+.choose-name-parent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  /* min-height: 25%; */
+}
+
+.choose-game-grandparent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 25%;
+}
+
+.choose-game-parent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  /* min-height: 25%; */
+  min-width: 80%;
+}
+
+.moves-grandparent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100%;
+}
+
+.moves-grandparent h2 {
+  margin-bottom: 0px;
+}
+
+.moves-parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 85%;
+}
+
+.center-container, aside {
+  border: 10px solid rgba(0, 0, 0, 0);
+  border-radius: 30px;
+  margin: 15px;
+  background-color: rgba(0, 0, 0, 0.563);
+  font-family: 'Jost';
+  color: white;
+}
+
+.center-container {
+  min-width: 60%;
+}
+
+img {
+  filter: invert(1);
+}
+
+button {
+  padding: 3px 20px 5px 20px;
+  background-color: rgba(255, 136, 0, 0.721);
+  border-radius: 10px;
+  font-family: 'Jost';
+  color: white;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 15%;
+}
+
+.aside-right-top, .aside-left-top {
+  min-height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.points-span {
+  background-color: gray;
+  border-radius: 30px;
+}
+
+.hidden {
+  display: none;
+}
