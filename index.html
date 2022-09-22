@@ -3,22 +3,44 @@
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="styles.css">
-      <link href="" rel="stylesheet">
+      <title>paper, scissors, stone....</title>
     </head>
     <body>
       <header>
-        <h1>rock, paper, scissors....</h1>
+        <h1>paper, scissors, stone....</h1>
       </header>
       <main>
         <aside id="aside-left">
-          <h2>User</h2>
-          <p>Wins: 0</p>
-          <button id="change-game">change game mode</button>
+          <div class="aside-left-top">
+            <h2>User</h2>
+            <p>rounds won: 0</p>
+            <p>points: 0</p>
+          </div>
+          <div class="aside-left-bottom">
+            <button id="change-game">change game mode</button>
+          </div>
         </aside>
-        <section class="center-container">main section</section>
+        <section class="center-container">
+          <h2>choose your move/who are you?</h2>
+          <div class="moves-parent hidden">
+            <img src="assets/stone-user.png" alt="stone" width="12%">
+            <img src="assets/paper-user.png" alt="paper" width="12%">
+            <img src="assets/scissors-user.png" alt="scissors" width="12%">
+            <img src="assets/matches-user.png" alt="matches" width="12%">
+            <img src="assets/cup-user.png" alt="cup" width="12%">
+          </div>
+          <div class="name-div">
+            <label for=""
+          </div>
+        </section>
         <aside id="aside-right">
-          <h2>Computer</h2>
-          <p>Wins: 0</p>
+          <div class="aside-right-top">
+            <h2>Computer</h2>
+            <p>rounds won: 0</p>
+            <p>points: 0</p>
+          </div>
+          <div class="aside-right-bottom">
+          </div>
         </aside>
       </main>
       <script src="scripts.js"></script>
