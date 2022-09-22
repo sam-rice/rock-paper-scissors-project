@@ -24,7 +24,9 @@ var paper = document.getElementById("paper");
 var scissors = document.getElementById("scissors");
 var matches = document.getElementById("matches");
 var cup = document.getElementById("cup");
-
+var userWinsMessage = document.getElementById("user-winner");
+var compWinsMessage = document.getElementById("comp-winner");
+var drawMessage = document.getElementById("draw");
 
 
 //----------------------EVENT LISTENERS----------------------//
@@ -62,21 +64,17 @@ changeGameButton.addEventListener("click", function () {
   show(gameTypePage);
   show(cup);
   show(matches);
-})
+});
 
 gameplayPage.addEventListener("click", function (event) {
   if (event.target.id === "gameplay-page") {
     return;
-  }
+  };
   user.takeTurn(event.target.id)
   updatePoints();
 });
 
-
-
 //----------------------EVENT HANDLERS - DATA ----------------------//
-
-//LANDING PAGE
 
 function createHumanPlayer(name, emoji) {
   user = new Player (name, emoji);
@@ -87,21 +85,31 @@ function startNewGame() {
   currentGame = new Game (user, computerPlayer)
 };
 
-//GAMEPLAY PAGE
+//----------------------EVENT HANDLERS - DOM ----------------------//
 
 function announceUserWinner() {
-  console.log("user wins!")
+  hide(gameplayPage);
+  show(userWinsMessage);
+  userWinsMessage.innerHTML = `
+    <p>${user.name} wins!</p>
+    `;
+  setTimeout(hide, 2000, userWinsMessage)
+  setTimeout(show, 2000, gameplayPage)
 };
 
 function announceCompWinner() {
-  console.log("computer wins!")
+  hide(gameplayPage);
+  show(compWinsMessage);
+  setTimeout(hide, 2000, compWinsMessage)
+  setTimeout(show, 2000, gameplayPage)
 };
 
 function announceDraw() {
-  console.log("draw!")
+  hide(gameplayPage);
+  show(drawMessage);
+  setTimeout(hide, 2000, drawMessage)
+  setTimeout(show, 2000, gameplayPage)
 };
-
-//----------------------EVENT HANDLERS - DOM ----------------------//
 
 function hide(element) {
   element.classList.add("hidden");
@@ -111,25 +119,10 @@ function show(element) {
   element.classList.remove("hidden");
 };
 
-//LANDING PAGE
-
 function updateUserInfo() {
   document.getElementById("user-name").innerText = user.name;
   document.getElementById("user-emoji").innerText = user.token;
 };
-
-
-
-
-//GAME-TYPE PAGE
-
-
-
-
-
-
-
-//GAMEPLAY PAGE
 
 function updatePoints() {
   userPoints.innerHTML = `
@@ -141,7 +134,3 @@ function updatePoints() {
     <p>points: ${computerPlayer.wins}</p>
     `;
 };
-
-
-
-
