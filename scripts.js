@@ -7,12 +7,16 @@ var computerPlayer;
 function createHumanPlayer() {
   user = new Player ("Sam", "human emoji");
   computerPlayer = new Player ("Computer", "comp emoji");
+  startNewGame();
+};
+
+function startNewGame() {
   currentGame = new Game (user, computerPlayer)
 };
 
 //----------------GAME-TYPE PAGE----------------//
 
-function startFirstGame(type) {
+function chooseGameType(type) {
   currentGame.gameType = type;
   //update DOM - relevant game page
 };
@@ -28,10 +32,6 @@ function announceCompWinner() {
 };
 
 function announceDraw() {
-  startNewGame();
   console.log("draw!")
 };
 
-function startNewGame() {
-
-};
