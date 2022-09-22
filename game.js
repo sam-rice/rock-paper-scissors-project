@@ -4,72 +4,72 @@ class Game {
     this.gameType = null
     this.humanMove = null
     this.computerMove = null
-    this.basicMoves = ["rock", "paper", "scissors"]
-    this.advancedMoves = ["rock", "paper", "scissors", "ghost", "lizard"]
+    this.basicMoves = ["stone", "paper", "scissors"]
+    this.advancedMoves = ["stone", "paper", "scissors", "matches", "cup"]
   };
 
   checkWinner() {
     this.makeCompMove();
     if (this.humanMove === this.computerMove) {
       announceDraw();
-    } else if (this.humanMove === "rock" && this.computerMove === "paper") {
+    } else if (this.humanMove === "stone" && this.computerMove === "paper") {
       announceCompWinner();
       this.players[1].wins++;
-    } else if (this.humanMove === "rock" && this.computerMove === "scissors") {
+    } else if (this.humanMove === "stone" && this.computerMove === "scissors") {
       announceUserWinner();
       this.players[0].wins++;
-    } else if (this.humanMove === "rock" && this.computerMove === "ghost") {
+    } else if (this.humanMove === "stone" && this.computerMove === "matches") {
       announceCompWinner();
       this.players[1].wins++;
-    } else if (this.humanMove === "rock" && this.computerMove === "lizard") {
+    } else if (this.humanMove === "stone" && this.computerMove === "cup") {
       announceUserWinner();
       this.players[0].wins++;
-    } else if (this.humanMove === "paper" && this.computerMove === "rock") {
+    } else if (this.humanMove === "paper" && this.computerMove === "stone") {
       announceUserWinner();
       this.players[0].wins++;
     } else if (this.humanMove === "paper" && this.computerMove === "scissors") {
       announceCompWinner();
       this.players[1].wins++;
-    } else if (this.humanMove === "paper" && this.computerMove === "ghost") {
-      announceUserWinner();
-      this.players[0].wins++;
-    } else if (this.humanMove === "paper" && this.computerMove === "lizard") {
+    } else if (this.humanMove === "paper" && this.computerMove === "matches") {
       announceCompWinner();
       this.players[1].wins++;
-    } else if (this.humanMove === "scissors" && this.computerMove === "rock") {
+    } else if (this.humanMove === "paper" && this.computerMove === "cup") {
+      announceUserWinner();
+      this.players[0].wins++;
+    } else if (this.humanMove === "scissors" && this.computerMove === "stone") {
       announceCompWinner();
       this.players[1].wins++;
     } else if (this.humanMove === "scissors" && this.computerMove === "paper") {
       announceUserWinner();
       this.players[0].wins++;
-    } else if (this.humanMove === "scissors" && this.computerMove === "ghost") {
+    } else if (this.humanMove === "scissors" && this.computerMove === "matches") {
+      announceUserWinner();
+      this.players[0].wins++;
+    } else if (this.humanMove === "scissors" && this.computerMove === "cup") {
       announceCompWinner();
       this.players[1].wins++;
-    } else if (this.humanMove === "scissors" && this.computerMove === "lizard") {
-      announceUserWinner();
-      this.players[0].wins++;
-    } else if (this.humanMove === "lizard" && this.computerMove === "rock") {
+    } else if (this.humanMove === "cup" && this.computerMove === "stone") {
       announceCompWinner();
       this.players[1].wins++;
-    } else if (this.humanMove === "lizard" && this.computerMove === "paper") {
-      announceUserWinner();
-      this.players[0].wins++;
-    } else if (this.humanMove === "lizard" && this.computerMove === "scissors") {
+    } else if (this.humanMove === "cup" && this.computerMove === "paper") {
       announceCompWinner();
       this.players[1].wins++;
-    } else if (this.humanMove === "lizard" && this.computerMove === "ghost") {
+    } else if (this.humanMove === "cup" && this.computerMove === "scissors") {
       announceUserWinner();
       this.players[0].wins++;
-    } else if (this.humanMove === "ghost" && this.computerMove === "rock") {
+    } else if (this.humanMove === "cup" && this.computerMove === "matches") {
       announceUserWinner();
       this.players[0].wins++;
-    } else if (this.humanMove === "ghost" && this.computerMove === "paper") {
+    } else if (this.humanMove === "matches" && this.computerMove === "stone") {
+      announceUserWinner();
+      this.players[0].wins++;
+    } else if (this.humanMove === "matches" && this.computerMove === "paper") {
+      announceUserWinner();
+      this.players[0].wins++;
+    } else if (this.humanMove === "matches" && this.computerMove === "scissors") {
       announceCompWinner();
       this.players[1].wins++;
-    } else if (this.humanMove === "ghost" && this.computerMove === "scissors") {
-      announceUserWinner();
-      this.players[0].wins++;
-    } else if (this.humanMove === "ghost" && this.computerMove === "lizard") {
+    } else if (this.humanMove === "matches" && this.computerMove === "cup") {
       announceCompWinner();
       this.players[1].wins++;
     };

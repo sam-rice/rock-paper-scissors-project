@@ -12,11 +12,6 @@
   font-style: normal;
 }
 
-/* * {
-  margin: 0;
-  padding: 0;
-} */
-
 html {
   height: 100%;
 }
@@ -129,7 +124,6 @@ button {
   border-radius: 10px;
   font-family: 'Jost';
   color: white;
-
 }
 
 aside {

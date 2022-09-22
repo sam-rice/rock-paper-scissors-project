@@ -6,16 +6,16 @@ class Player {
   };
 
   takeTurn(move) {
-      if (move === "rock") {
-          currentGame.humanMove = "rock";
+      if (move === "stone") {
+          currentGame.humanMove = "stone";
       } else if (move === "paper") {
           currentGame.humanMove = "paper";
       } else if (move === "scissors") {
           currentGame.humanMove = "scissors";
-      } else if (move === "ghost") {
-          currentGame.humanMove = "ghost";
+      } else if (move === "cup") {
+          currentGame.humanMove = "cup";
       } else {
-          currentGame.humanMove = "lizard";
+          currentGame.humanMove = "matches";
       };
       currentGame.checkWinner();
   }; 
