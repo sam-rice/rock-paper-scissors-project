@@ -32,11 +32,11 @@ header {
   font-size: 2.2em;
   color: rgb(255, 136, 0);
   margin-top: -20px;
-  margin-bottom: 10px;
+  margin-bottom: -10px;
   height: 20%;
 }
 
-h2 {
+h2, h3 {
   font-family: 'MADEMirage-Black';
   color: rgb(255, 136, 0);
 }
@@ -50,10 +50,18 @@ main {
 
 .choose-name-grandparent {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  min-height: 25%;
+  min-height: 100%;
+}
+
+.choose-game-grandparent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100%;
 }
 
 .choose-name-parent {
@@ -61,15 +69,13 @@ main {
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  /* min-height: 25%; */
+  min-height: 200px;
 }
 
-.choose-game-grandparent {
+.name-form-div, .emoji-selector-div {
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 25%;
 }
 
 .choose-game-parent {
@@ -77,7 +83,7 @@ main {
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
-  /* min-height: 25%; */
+  /* min-height: 100%; */
   min-width: 80%;
 }
 
