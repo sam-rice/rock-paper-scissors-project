@@ -1,9 +1,21 @@
 @font-face {
   font-family: 'MADEMirage-Black';
-  src:url("assets/MADEMirage-Black.ttf.woff") format('woff');
+  src: url("assets/MADEMirage-Black.ttf.woff") format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Jost';
+  src: url("assets/Jost-VariableFont_wght.ttf") format('truetype'), url("assets/Jost-Italic-VariableFont_wght.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+} */
 
 html {
   height: 100%;
@@ -16,10 +28,9 @@ body {
   height: 100%;
   background-image: url("assets/if_still1.jpeg");
   background-repeat: repeat-y;
-  background-size: 100%;
+  background-size: 115%;
   background-position: center;
 }
-
 
 header {
   font-family: 'MADEMirage-Black';
@@ -41,11 +52,20 @@ main {
   min-height: 80%;
 }
 
+.moves-parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-height: 85%;
+  align-items: center;
+}
+
 .center-container, aside {
   border: 10px solid rgba(0, 0, 0, 0);
   border-radius: 30px;
   margin: 15px;
   background-color: rgba(0, 0, 0, 0.563);
+  font-family: 'Jost';
   color: white;
 }
 
@@ -53,6 +73,17 @@ main {
   min-width: 60%;
 }
 
+img {
+  filter: invert(1);
+}
+
 aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-width: 15%;
+}
+
+.hidden {
+  display: none;
 }
