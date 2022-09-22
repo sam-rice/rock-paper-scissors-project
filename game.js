@@ -4,8 +4,8 @@ class Game {
     this.gameType = null
     this.humanMove = null
     this.computerMove = null
-    this.basicMoves = ["rock", "paper", "scissors"];
-    this.advancedMoves = ["rock", "paper", "scissors", "ghost", "lizard"];
+    this.basicMoves = ["rock", "paper", "scissors"]
+    this.advancedMoves = ["rock", "paper", "scissors", "ghost", "lizard"]
   };
 
   checkWinner() {
