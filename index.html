@@ -13,29 +13,54 @@
         <aside id="aside-left">
           <div class="aside-left-top">
             <h2>User</h2>
+            <p>💂‍♀️</p>
             <p>rounds won: 0</p>
             <p>points: 0</p>
           </div>
           <div class="aside-left-bottom">
-            <button id="change-game">change game mode</button>
+            <button id="change-game">change game type</button>
           </div>
         </aside>
         <section class="center-container">
-          <h2>choose your move/who are you?</h2>
           <div class="moves-parent hidden">
+            <h2>choose your move</h2>
             <img src="assets/stone-user.png" alt="stone" width="12%">
             <img src="assets/paper-user.png" alt="paper" width="12%">
             <img src="assets/scissors-user.png" alt="scissors" width="12%">
             <img src="assets/matches-user.png" alt="matches" width="12%">
             <img src="assets/cup-user.png" alt="cup" width="12%">
           </div>
-          <div class="name-div">
-            <label for=""
+          <div class="choose-name-parent hidden">
+            <h2>who are you?</h2>
+            <label for="name-input">name:</label>
+            <input type="form" id="name-input" name="name-input">
+            <label for="emojis">avatar:</label>
+            <select id="emojis" name="emojis">
+              <option value="💂‍♀️">💂‍♀️</option>
+              <option value="👨‍🎓">👨‍🎓</option>
+              <option value="👩‍🎓">👩‍🎓</option>
+              <option value="🦉">🦉</option>
+            </select>
+            <button class="submit-name">submit</button>
+          </div>
+          <div class="choose-game-parent">
+            <h2>choose game type</h2>
+            <div class="mode-selector-parent">
+              <section class="basic-mode-select">
+                <p>basic game rules</p>
+                <button class="game-type-buttons">basic</button>
+              </section>
+              <section class="advanced-mode-select">
+                <p>basic game rules</p>
+                <button class="game-type-buttons">advanced</button>
+              </section>
+            </div>
           </div>
         </section>
         <aside id="aside-right">
           <div class="aside-right-top">
             <h2>Computer</h2>
+            <p>💂‍♀️</p>
             <p>rounds won: 0</p>
             <p>points: 0</p>
           </div>

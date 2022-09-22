@@ -52,12 +52,37 @@ main {
   min-height: 80%;
 }
 
+.choose-name-parent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  min-height: 25%;
+}
+
+.choose-game-parent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  min-height: 25%;
+}
+
+.mode-selector-parent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  min-height: 25%;
+  min-width: 80%;
+}
+
 .moves-parent {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  min-height: 85%;
   align-items: center;
+  min-height: 85%;
 }
 
 .center-container, aside {
