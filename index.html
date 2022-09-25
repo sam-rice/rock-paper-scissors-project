@@ -6,10 +6,16 @@
       <title>paper, scissors, stone....</title>
     </head>
     <body>
-      <header>
+      <header class="hidden" id="header">
         <h1>paper, scissors, stone....</h1>
       </header>
-      <main>
+      <video class="main-vid" id="main-vid">
+        <source src="assets/MainClipTemp.mp4" type="video/mp4">
+      </video>
+      <div>
+        <p class="landing-message" id="landing-message">click anywhere to begin....</p>
+      </div>
+      <main class="hidden" id="main">
         <aside class="aside-left hidden" id="aside-left">
           <div class="aside-left-top">
             <span class="user-span">
@@ -22,7 +28,7 @@
             </span>
           </div>
           <div class="aside-left-bottom">
-            <button class="hidden" id="change-game">change game type</button>
+            <button class="hidden change-game-button" id="change-game">change game type</button>
           </div>
         </aside>
         <section class="center-container">
@@ -58,11 +64,11 @@
               </section>
               <section class="advanced-mode-select">
                 <h3>advanced</h3>
-                <p>Stone beats scissors & cup<br>
-                  Paper beats stone & cup<br>
-                  Scissors beats paper & matches<br>
-                  Cup beats scissors & matches<br>
-                  Matches beats paper & stone</p>
+                <p>stone beats scissors & cup<br>
+                  paper beats stone & cup<br>
+                  scissors beats paper & matches<br>
+                  cup beats scissors & matches<br>
+                  matches beats paper & stone</p>
                 <button class="game-type-buttons" id="advanced-button">advanced</button>
               </section>
             </div>
