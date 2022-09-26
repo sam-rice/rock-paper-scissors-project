@@ -266,7 +266,7 @@ function endGame(player) {
   winnerMessage.innerHTML = `<p>${player.name} wins....`;
   setTimeout(show, 15000, winnerMessage);
   setTimeout(fadeOut, 22000, winnerMessage);
-  setTimeout(hide, 2000, winnerMessage);
+  setTimeout(hide, 24000, winnerMessage);
 
   // setTimeout(refreshPage, 20000)
 };
