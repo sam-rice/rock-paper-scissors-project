@@ -37,6 +37,8 @@ var compMove = document.getElementById("comp-move");
 
 var mainVid = document.getElementById("main-vid");
 
+var winnerMessage = document.getElementById("winner-message");
+
 //----------------------EVENT LISTENERS----------------------//
 
 mainVid.addEventListener("click", function () {
@@ -261,10 +263,12 @@ function endGame(player) {
   setTimeout(hide, 2000, asideLeft);
   setTimeout(hide, 2000, asideRight);
   setTimeout(hide, 2000, header);
+  winnerMessage.innerHTML = `<p>${player.name} wins....`;
+  setTimeout(show, 15000, winnerMessage);
+  setTimeout(fadeOut, 22000, winnerMessage);
+  setTimeout(hide, 2000, winnerMessage);
 
-  //set Timeout to announce game winner over black
-
-  setTimeout(refreshPage, 20000)
+  // setTimeout(refreshPage, 20000)
 };
 
 function refreshPage() {

@@ -94,7 +94,6 @@ button:hover {
 }
 
 .landing-message {
-  color: white;
   font-family: 'MADEMirage-Black';
   color: rgb(255, 136, 0);
   animation: fadeIn 1s;
@@ -230,6 +229,18 @@ aside {
 .user-move, .comp-move {
   max-width: 10vh;
   max-height: auto;
+}
+
+/* ----------------------GAMEPLAY PAGE---------------------- */
+
+.winner-message {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  font-family: 'MADEMirage-Black';
+  color: rgb(255, 136, 0);
+  animation: fadeIn 4s;
 }
 
 /* ----------------------UTILITY CLASSES---------------------- */
