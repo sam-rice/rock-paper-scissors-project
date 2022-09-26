@@ -1,0 +1,273 @@
+@font-face {
+  font-family: 'MADEMirage-Black';
+  src: url("assets/MADEMirage-Black.ttf.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: url("assets/Jost-VariableFont_wght.ttf") format('truetype'), url("assets/Jost-Italic-VariableFont_wght.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ----------------------GLOBAL---------------------- */
+
+html {
+  height: 100%;
+}
+
+body {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: 1;
+}
+
+header {
+  font-family: 'MADEMirage-Black';
+  font-size: 2.5vw;
+  color: rgb(255, 136, 0);
+  margin-top: -20px;
+  margin-bottom: -10px;
+  height: 20%;
+  animation: fadeIn 1s;
+}
+
+
+h2, h3 {
+  font-family: 'MADEMirage-Black';
+  color: rgb(255, 136, 0);
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-height: 80%;
+  padding-right: 15px;
+  animation: fadeIn 1s;
+}
+
+.center-container, aside {
+  border: 10px solid rgba(0, 0, 0, 0);
+  border-radius: 30px;
+  margin: 15px;
+  background-color: rgba(0, 0, 0, 0.563);
+  font-family: 'Jost';
+  color: white;
+}
+
+.center-container {
+  min-width: 60%;
+}
+
+button {
+  padding: 3px 20px 5px 20px;
+  background-color: rgba(255, 136, 0, 0.721);
+  border-radius: 10px;
+  border-width: 0px;
+  font-family: 'Jost';
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* ----------------------LANDING PAGE---------------------- */
+
+.main-vid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: auto;
+  z-index: -1;
+}
+
+.landing-message {
+  font-family: 'MADEMirage-Black';
+  color: rgb(255, 136, 0);
+  animation: fadeIn 1s;
+}
+
+.landing-message:hover {
+  cursor: default;
+}
+
+/* ----------------------CHOOSE NAME PAGE---------------------- */
+
+.choose-name-grandparent {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+}
+
+.choose-name-parent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  min-height: 200px;
+}
+
+.name-form-div, .emoji-selector-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ----------------------CHOOSE GAME PAGE---------------------- */
+
+.choose-game-grandparent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100%;
+  animation: fadeIn 1s;
+}
+
+.choose-game-parent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  min-width: 80%;
+}
+
+/* ----------------------GAMEPLAY PAGE---------------------- */
+
+.gameplay-page-grandparent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100%;
+  animation: fadeIn 1s;
+}
+
+.gameplay-page-grandparent h2 {
+  margin-bottom: 0px;
+}
+
+.gameplay-page-parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 85%;
+}
+
+img {
+  filter: invert(1);
+}
+
+.moves:hover {
+  transform: scale(1.05);
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 15%;
+  animation: delayedFadeIn 4s;
+}
+
+.aside-full-speed-fade {
+  animation: fadeIn 1s;
+}
+
+.aside-right-top, .aside-left-top {
+  min-height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.points-span {
+  background-color: gray;
+  border-radius: 30px;
+}
+
+.change-game-button {
+  animation: fadeIn 2s;
+}
+
+.results-grandparent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100%;
+}
+
+.results-parent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  min-height: 85%;
+  min-width: 100%;
+}
+
+.user-move, .comp-move, .announce-winner {
+  animation: fadeIn 2s;
+}
+
+.user-move, .comp-move {
+  max-width: 10vh;
+  max-height: auto;
+}
+
+/* ----------------------GAMEPLAY PAGE---------------------- */
+
+.black-screen-message {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  font-family: 'MADEMirage-Black';
+  color: rgb(255, 136, 0);
+  animation: fadeIn 4s;
+}
+
+/* ----------------------UTILITY CLASSES---------------------- */
+
+.hidden {
+  display: none;
+}
+
+.fadeout {
+  animation: fadeOut 2s;
+}
+
+/* ----------------------ANIMATIONS---------------------- */
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  80% {opacity: 0;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes delayedFadeIn {
+  0% {opacity: 0;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
