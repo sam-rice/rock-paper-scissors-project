@@ -7,8 +7,6 @@ var computerPlayer;
 var mainHTML = document.getElementById("main");
 var header = document.getElementById("header");
 
-var landingMessage = document.getElementById("landing-message");
-
 var namePage = document.getElementById("choose-name");
 var submitNameButton = document.getElementById("submit-name");
 var nameInput = document.getElementById("name-input");
@@ -36,19 +34,20 @@ var userMove = document.getElementById("user-move");
 var compMove = document.getElementById("comp-move");
 
 var mainVid = document.getElementById("main-vid");
+var enterSitePage = document.getElementById("enter-site")
 
 var winnerMessage = document.getElementById("winner-message");
 
 //----------------------EVENT LISTENERS----------------------//
 
-mainVid.addEventListener("click", function () {
+enterSitePage.addEventListener("click", function () {
   mainVid.play();
-  fadeOut(landingMessage);
-  setTimeout(hide, 1200, landingMessage);
+  fadeOut(enterSitePage);
+  setTimeout(hide, 1200, enterSitePage);
   setTimeout(pauseVid, 5000);
   setTimeout(show, 3500, mainHTML);
   setTimeout(show, 3500, header);
-}, {once: true});
+});
 
 submitNameButton.addEventListener("click", submitNameFunctions);
 

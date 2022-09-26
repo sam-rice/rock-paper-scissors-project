@@ -233,7 +233,7 @@ aside {
 
 /* ----------------------GAMEPLAY PAGE---------------------- */
 
-.winner-message {
+.black-screen-message {
   display: flex;
   justify-content: center;
   flex-direction: column;
