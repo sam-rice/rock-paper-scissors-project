@@ -273,15 +273,3 @@ function endGame(player) {
 function refreshPage() {
   window.location.reload();
 };
-
-
-
-
-
-
-
-
-
-
-
-
