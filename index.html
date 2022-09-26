@@ -1,11 +1,108 @@
 <!DOCTYPE html>
-<html lang="en-US">
+  <html lang="en-US">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-        <link href="" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="styles.css">
+      <title>paper, scissors, stone....</title>
     </head>
     <body>
-        <script type="text/javascript" src="scripts.js"></script>
+      <header>
+        <h1>paper, scissors, stone....</h1>
+      </header>
+      <main>
+        <aside class="aside-left hidden" id="aside-left">
+          <div class="aside-left-top">
+            <span class="user-span">
+              <h2 id="user-name"></h2>
+              <p id="user-emoji"></p>
+            </span>
+            <span class="points-span" id="user-points">
+              <p>rounds won: 0</p>
+              <p>points: 0</p>
+            </span>
+          </div>
+          <div class="aside-left-bottom">
+            <button class="hidden" id="change-game">change game type</button>
+          </div>
+        </aside>
+        <section class="center-container">
+          <div class="choose-name-grandparent" id="choose-name">
+            <h2>who are you?</h2>
+            <div class="choose-name-parent">
+              <div class="name-form-div">
+                <label for="name-input">name:</label>
+                <input type="form" id="name-input" name="name-input">
+              </div>
+              <div class="emoji-selector-div">
+                <label for="emojis">avatar:</label>
+                <select id="emojis" name="emojis">
+                  <option value="💂‍♀️">💂‍♀️</option>
+                  <option value="👨‍🎓">👨‍🎓</option>
+                  <option value="👩‍🎓">👩‍🎓</option>
+                  <option value="🦉">🦉</option>
+                </select>
+              </div>
+              <button class="submit-name" id="submit-name">submit</button>
+            </div>
+            <br>
+          </div>
+          <div class="choose-game-grandparent hidden" id="choose-game">
+            <h2>choose game type</h2>
+            <div class="choose-game-parent">
+              <section class="basic-mode-select">
+                <h3>basic</h3>
+                <p>stone beats scissors<br>
+                paper beats stone<br>
+                scissors beats paper</p>
+                <button class="game-type-buttons" id="basic-button">basic</button>
+              </section>
+              <section class="advanced-mode-select">
+                <h3>advanced</h3>
+                <p>Stone beats scissors & cup<br>
+                  Paper beats stone & cup<br>
+                  Scissors beats paper & matches<br>
+                  Cup beats scissors & matches<br>
+                  Matches beats paper & stone</p>
+                <button class="game-type-buttons" id="advanced-button">advanced</button>
+              </section>
+            </div>
+            <br>
+          </div>
+          <div class="gameplay-page-grandparent hidden" id="gameplay-page">
+            <h2>choose your move</h2>
+            <div class="gameplay-page-parent">
+              <img src="assets/stone-user.png" id="stone" alt="stone" width="12%">
+              <img src="assets/paper-user.png" id="paper" alt="paper" width="12%">
+              <img src="assets/scissors-user.png" id="scissors" alt="scissors" width="12%">
+              <img src="assets/matches-user.png" id="matches" alt="matches" width="12%">
+              <img src="assets/cup-user.png" id="cup" alt="cup" width="12%">
+            </div>
+            <br>
+          </div>
+          <div class="announce-winner hidden" id="user-winner">
+          </div>
+          <div class="announce-winner hidden" id="comp-winner">
+            <p>computer wins!</p>
+          </div>
+          <div class="announce-winner hidden" id="draw">
+            <p>draw!</p>
+          </div>
+        </section>
+        <aside class="aside-right hidden" id="aside-right">
+          <div class="aside-right-top">
+            <span class="user-span">
+              <h2>Computer</h2>
+              <p>🖥</p>
+            </span>
+            <span class="points-span" id="comp-points">
+            </span>
+          </div>
+          <div class="aside-right-bottom">
+          </div>
+        </aside>
+      </main>
+      <script src="scripts.js"></script>
+      <script src="game.js"></script>
+      <script src="player.js"></script>
     </body>
 </html>
