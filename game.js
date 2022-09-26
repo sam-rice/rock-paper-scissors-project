@@ -9,72 +9,70 @@ class Game {
   };
 
   checkWinner() {
+    var roundWinner;
     this.makeCompMove();
+    
     if (this.humanMove === this.computerMove) {
       announceDraw();
+      return;
     } else if (this.humanMove === "stone" && this.computerMove === "paper") {
-      announceCompWinner();
-      this.players[1].wins++;
+      roundWinner = this.players[1];
     } else if (this.humanMove === "stone" && this.computerMove === "scissors") {
-      announceUserWinner();
-      this.players[0].wins++;
+      roundWinner = this.players[0];
     } else if (this.humanMove === "stone" && this.computerMove === "matches") {
-      announceCompWinner();
-      this.players[1].wins++;
+      roundWinner = this.players[1];
     } else if (this.humanMove === "stone" && this.computerMove === "cup") {
-      announceUserWinner();
-      this.players[0].wins++;
+      roundWinner = this.players[0];
     } else if (this.humanMove === "paper" && this.computerMove === "stone") {
-      announceUserWinner();
-      this.players[0].wins++;
+      roundWinner = this.players[0];
     } else if (this.humanMove === "paper" && this.computerMove === "scissors") {
-      announceCompWinner();
-      this.players[1].wins++;
+      roundWinner = this.players[1];
     } else if (this.humanMove === "paper" && this.computerMove === "matches") {
-      announceCompWinner();
-      this.players[1].wins++;
+      roundWinner = this.players[1];
     } else if (this.humanMove === "paper" && this.computerMove === "cup") {
-      announceUserWinner();
-      this.players[0].wins++;
+      roundWinner = this.players[0];
     } else if (this.humanMove === "scissors" && this.computerMove === "stone") {
-      announceCompWinner();
-      this.players[1].wins++;
+      roundWinner = this.players[1];
     } else if (this.humanMove === "scissors" && this.computerMove === "paper") {
-      announceUserWinner();
-      this.players[0].wins++;
+      roundWinner = this.players[0];
     } else if (this.humanMove === "scissors" && this.computerMove === "matches") {
-      announceUserWinner();
-      this.players[0].wins++;
+      roundWinner = this.players[0];
     } else if (this.humanMove === "scissors" && this.computerMove === "cup") {
-      announceCompWinner();
-      this.players[1].wins++;
+      roundWinner = this.players[1];
     } else if (this.humanMove === "cup" && this.computerMove === "stone") {
-      announceCompWinner();
-      this.players[1].wins++;
+      roundWinner = this.players[1];
     } else if (this.humanMove === "cup" && this.computerMove === "paper") {
-      announceCompWinner();
-      this.players[1].wins++;
+      roundWinner = this.players[1];
     } else if (this.humanMove === "cup" && this.computerMove === "scissors") {
-      announceUserWinner();
-      this.players[0].wins++;
+      roundWinner = this.players[0];
     } else if (this.humanMove === "cup" && this.computerMove === "matches") {
-      announceUserWinner();
-      this.players[0].wins++;
+      roundWinner = this.players[0];
     } else if (this.humanMove === "matches" && this.computerMove === "stone") {
-      announceUserWinner();
-      this.players[0].wins++;
+      roundWinner = this.players[0];
     } else if (this.humanMove === "matches" && this.computerMove === "paper") {
-      announceUserWinner();
-      this.players[0].wins++;
+      roundWinner = this.players[0];
     } else if (this.humanMove === "matches" && this.computerMove === "scissors") {
-      announceCompWinner();
-      this.players[1].wins++;
+      roundWinner = this.players[1];
     } else if (this.humanMove === "matches" && this.computerMove === "cup") {
-      announceCompWinner();
-      this.players[1].wins++;
+      roundWinner = this.players[1];
     };
 
-    console.log("user wins: ", this.players[0].wins, "comp wins: ", this.players[1].wins)
+    roundWinner.wins++;
+
+    if (this.players[0].wins === 10) {
+      endGame(this.players[0]);
+      return;
+    } else if (this.players[1].wins === 10) {
+      endGame(this.players[1]);
+      return;
+    };
+
+    if (roundWinner === this.players[0]) {
+      announceUserWinner();
+    } else if (roundWinner === this.players[1]) {
+      announceCompWinner();
+    };
+
   };
 
   makeCompMove() {
