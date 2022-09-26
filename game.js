@@ -74,7 +74,11 @@ class Game {
       this.players[1].wins++;
     };
 
-    console.log("user wins: ", this.players[0].wins, "comp wins: ", this.players[1].wins)
+    if (this.players[0].wins === 10) {
+      endGame(this.players[0]);
+    } else if (this.players[1].wins === 10) {
+      endGame(this.players[1]);
+    };
   };
 
   makeCompMove() {

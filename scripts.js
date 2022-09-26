@@ -32,6 +32,8 @@ var cup = document.getElementById("cup");
 var userWinsMessage = document.getElementById("user-winner");
 var compWinsMessage = document.getElementById("comp-winner");
 var drawMessage = document.getElementById("draw");
+var userMove = document.getElementById("user-move");
+var compMove = document.getElementById("comp-move");
 
 var mainVid = document.getElementById("main-vid");
 
@@ -44,14 +46,14 @@ mainVid.addEventListener("click", function () {
   setTimeout(pauseVid, 5000);
   setTimeout(show, 3500, mainHTML);
   setTimeout(show, 3500, header);
-});
+}, {once: true});
 
 submitNameButton.addEventListener("click", submitNameFunctions);
 
 basicButton.addEventListener("click", function () {
   currentGame.gameType = "basic";
   fadeOut(gameTypePage);
-  setTimeout(hide, 2000, gameTypePage);
+  setTimeout(hide, 1800, gameTypePage);
   setTimeout(removeFadeOut, 2000, gameTypePage);
   setTimeout(show, 2000, gameplayPage);
   setTimeout(show, 2000, changeGameButton);
@@ -62,7 +64,7 @@ basicButton.addEventListener("click", function () {
 advancedButton.addEventListener("click", function () {
   currentGame.gameType = "advanced";
   fadeOut(gameTypePage);
-  setTimeout(hide, 2000, gameTypePage);
+  setTimeout(hide, 1800, gameTypePage);
   setTimeout(removeFadeOut, 2000, gameTypePage);
   setTimeout(show, 2000, gameplayPage);
   setTimeout(show, 2000, changeGameButton); 
@@ -162,46 +164,112 @@ function resumeVid() {
 
 function announceUserWinner() {
   hide(gameplayPage);
+  updateCurrentMoves();
+
+  show(userMove);
+  show(compMove);
   show(userWinsMessage);
-  userWinsMessage.innerHTML = `
-    <p>${user.name} wins!</p>
-    `;
-  setTimeout(hide, 2000, userWinsMessage);
-  setTimeout(show, 2000, gameplayPage);
+
+  setTimeout(fadeOut, 2000, userMove);
+  setTimeout(fadeOut, 2000, compMove);
+  setTimeout(fadeOut, 2000, userWinsMessage);
+
+  setTimeout(hide, 4000, userMove);
+  setTimeout(hide, 4000, compMove);
+  setTimeout(hide, 4000, userWinsMessage);
+
+  setTimeout(removeFadeOut, 4000, userMove);
+  setTimeout(removeFadeOut, 4000, compMove);
+  setTimeout(removeFadeOut, 4000, userWinsMessage);
+
+  setTimeout(show, 3000, gameplayPage);
 };
 
 function announceCompWinner() {
   hide(gameplayPage);
+  updateCurrentMoves();
+  show(userMove);
+  show(compMove);
   show(compWinsMessage);
-  setTimeout(hide, 2000, compWinsMessage);
-  setTimeout(show, 2000, gameplayPage);
+
+  setTimeout(fadeOut, 2000, userMove);
+  setTimeout(fadeOut, 2000, compMove);
+  setTimeout(fadeOut, 2000, compWinsMessage);
+
+  setTimeout(hide, 4000, userMove);
+  setTimeout(hide, 4000, compMove);
+  setTimeout(hide, 4000, compWinsMessage);
+
+  setTimeout(removeFadeOut, 4000, userMove);
+  setTimeout(removeFadeOut, 4000, compMove);
+  setTimeout(removeFadeOut, 4000, compWinsMessage);
+
+  setTimeout(show, 3000, gameplayPage);
 };
 
 function announceDraw() {
   hide(gameplayPage);
+  updateCurrentMoves();
+  show(userMove);
+  show(compMove);
   show(drawMessage);
-  setTimeout(hide, 2000, drawMessage);
-  setTimeout(show, 2000, gameplayPage);
+  
+  setTimeout(fadeOut, 2000, userMove);
+  setTimeout(fadeOut, 2000, compMove);
+  setTimeout(fadeOut, 2000, drawMessage);
+
+  setTimeout(hide, 4000, userMove);
+  setTimeout(hide, 4000, compMove);
+  setTimeout(hide, 4000, drawMessage);
+
+  setTimeout(removeFadeOut, 4000, userMove);
+  setTimeout(removeFadeOut, 4000, compMove);
+  setTimeout(removeFadeOut, 4000, drawMessage);
+
+  setTimeout(show, 3000, gameplayPage);
+};
+
+function updateCurrentMoves() {
+  userMove.innerHTML = `<img src="assets/${currentGame.humanMove}-user.png" class="user-move">`;
+  compMove.innerHTML = `<img src="assets/${currentGame.computerMove}-comp.png" class="comp-move">`;
 };
 
 function updateUserInfo() {
   document.getElementById("user-name").innerText = user.name;
   document.getElementById("user-emoji").innerText = user.token;
+  userWinsMessage.innerHTML = `
+  <p>${user.name} wins!</p>
+  `;
 };
 
 function updatePoints() {
   userPoints.innerHTML = `
-    <p>rounds won: 0</p>
     <p>points: ${user.wins}</p>
     `;
   compPoints.innerHTML = `
-    <p>rounds won: 0</p>
     <p>points: ${computerPlayer.wins}</p>
     `;
 };
 
+function endGame(player) {
+  resumeVid();
+  fadeOut(mainHTML);
+  fadeOut(asideLeft);
+  fadeOut(asideRight);
+  fadeOut(header);
+  setTimeout(hide, 2000, mainHTML);
+  setTimeout(hide, 2000, asideLeft);
+  setTimeout(hide, 2000, asideRight);
+  setTimeout(hide, 2000, header);
 
+  //set Timeout to announce game winner over black
 
+  setTimeout(refreshPage, 20000)
+};
+
+function refreshPage() {
+  window.location.reload();
+};
 
 
 

@@ -174,6 +174,10 @@ img {
   filter: invert(1);
 }
 
+.moves:hover {
+  transform: scale(1.05);
+}
+
 aside {
   display: flex;
   flex-direction: column;
@@ -202,6 +206,32 @@ aside {
   animation: fadeIn 2s;
 }
 
+.results-grandparent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100%;
+}
+
+.results-parent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  min-height: 85%;
+  min-width: 100%;
+}
+
+.user-move, .comp-move, .announce-winner {
+  animation: fadeIn 2s;
+}
+
+.user-move, .comp-move {
+  max-width: 10vh;
+  max-height: auto;
+}
+
 /* ----------------------UTILITY CLASSES---------------------- */
 
 .hidden {
@@ -211,10 +241,6 @@ aside {
 .fadeout {
   animation: fadeOut 2s;
 }
-
-/* .delayed-fade-in {
-  animation: delayedFadeIn 4s;
-} */
 
 /* ----------------------ANIMATIONS---------------------- */
 

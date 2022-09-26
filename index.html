@@ -23,7 +23,6 @@
               <p id="user-emoji"></p>
             </span>
             <span class="points-span" id="user-points">
-              <p>rounds won: 0</p>
               <p>points: 0</p>
             </span>
           </div>
@@ -77,21 +76,29 @@
           <div class="gameplay-page-grandparent hidden" id="gameplay-page">
             <h2>choose your move</h2>
             <div class="gameplay-page-parent">
-              <img src="assets/stone-user.png" id="stone" alt="stone" width="12%">
-              <img src="assets/paper-user.png" id="paper" alt="paper" width="12%">
-              <img src="assets/scissors-user.png" id="scissors" alt="scissors" width="12%">
-              <img src="assets/matches-user.png" id="matches" alt="matches" width="12%">
-              <img src="assets/cup-user.png" id="cup" alt="cup" width="12%">
+              <img src="assets/stone-user.png" class="moves" id="stone" alt="stone" width="12%">
+              <img src="assets/paper-user.png" class="moves" id="paper" alt="paper" width="12%">
+              <img src="assets/scissors-user.png" class="moves" id="scissors" alt="scissors" width="12%">
+              <img src="assets/matches-user.png" class="moves" id="matches" alt="matches" width="12%">
+              <img src="assets/cup-user.png" class="moves" id="cup" alt="cup" width="12%">
             </div>
             <br>
           </div>
-          <div class="announce-winner hidden" id="user-winner">
-          </div>
-          <div class="announce-winner hidden" id="comp-winner">
-            <p>computer wins!</p>
-          </div>
-          <div class="announce-winner hidden" id="draw">
-            <p>draw!</p>
+          <div class="results-grandparent">
+            <h2></h2>
+            <div class="results-parent">
+              <span class="user-move hidden" id="user-move"></span>
+              <span class="announce-winner hidden" id="user-winner">
+              </span>
+              <span class="announce-winner hidden" id="comp-winner">
+                <p>computer wins!</p>
+              </span>
+              <span class="announce-winner hidden" id="draw">
+                <p>draw!</p>
+              </span>
+              <span class="comp-move hidden" id="comp-move"></span>
+            </div>
+            <br>
           </div>
         </section>
         <aside class="aside-right hidden" id="aside-right">
