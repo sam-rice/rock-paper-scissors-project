@@ -146,6 +146,19 @@ button:hover {
   min-width: 80%;
 }
 
+/* ----------------------ABOUT PAGE---------------------- */
+
+/* UNHIDE CHOOSE-NAME-GRANDPARENT */
+
+.movie-info-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80%;
+  animation: fadeIn 2s;
+}
+
 /* ----------------------GAMEPLAY PAGE---------------------- */
 
 .gameplay-page-grandparent {
@@ -208,6 +221,10 @@ aside {
 
 .change-game-button {
   animation: fadeIn 2s;
+}
+
+.change-game-button, .movie-info {
+  min-width: 68%;
 }
 
 .results-grandparent {

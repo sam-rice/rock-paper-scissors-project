@@ -13,6 +13,7 @@ var submitNameButton = document.getElementById("submit-name");
 var nameInput = document.getElementById("name-input");
 var emojiInput = document.getElementById("emojis");
 var gameTypePage = document.getElementById("choose-game");
+var aboutButton = document.getElementById("movie-info");
 var asideLeft = document.getElementById("aside-left");
 var asideRight = document.getElementById("aside-right");
 var userPoints = document.getElementById("user-points");
@@ -44,6 +45,8 @@ submitNameButton.addEventListener("click", function () {
   startNewGame();
   transitionToGameTypes();
 });
+
+aboutButton.addEventListener("click", transitionToMovieInfo);
 
 basicButton.addEventListener("click", function () {
   currentGame.gameType = "basic";
@@ -115,6 +118,10 @@ function transitionToGameTypes() {
   setTimeout(show, 9000, asideRight);
   setTimeout(show, 9000, header);
   setTimeout(pauseVid, 9000);
+};
+
+function transitionToMovieInfo() {
+
 };
 
 function transitionToGame() {
