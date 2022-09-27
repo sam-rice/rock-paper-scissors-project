@@ -101,9 +101,9 @@ function transitionToNamePage() {
   mainVid.play();
   fadeOut(enterSitePage);
   setTimeout(hide, 1200, enterSitePage);
-  setTimeout(pauseVid, 5000);
-  setTimeout(show, 3500, mainHTML);
-  setTimeout(show, 3500, header);
+  setTimeout(pauseVid, 51600);
+  setTimeout(show, 51600, mainHTML);
+  setTimeout(show, 51600, header);
 };
 
 function transitionToGameTypes() {
@@ -126,16 +126,12 @@ function transitionToGameTypes() {
   asideLeft.classList.add("aside-full-speed-fade");
   asideRight.classList.add("aside-full-speed-fade");
   setTimeout(removeFadeOut, 2000, header);
-  setTimeout(show, 9000, mainHTML);
-  setTimeout(show, 9000, gameTypePage);
-  setTimeout(show, 9000, asideLeft);
-  setTimeout(show, 9000, asideRight);
-  setTimeout(show, 9000, header);
-  setTimeout(pauseVid, 9000);
-};
-
-function transitionToMovieInfo() {
-
+  setTimeout(show, 136000, mainHTML);
+  setTimeout(show, 136000, gameTypePage);
+  setTimeout(show, 136000, asideLeft);
+  setTimeout(show, 136000, asideRight);
+  setTimeout(show, 136000, header);
+  setTimeout(pauseVid, 136000);
 };
 
 function transitionToGame() {
@@ -194,7 +190,7 @@ function endGame(player) {
   setTimeout(show, 15000, winnerMessage);
   setTimeout(fadeOut, 22000, winnerMessage);
   setTimeout(hide, 24000, winnerMessage);
-  // setTimeout(refreshPage, 20000)
+  setTimeout(refreshPage, 54000);
 };
 
 //UTILITIES
@@ -236,7 +232,7 @@ function updateUserInfo() {
   document.getElementById("user-name").innerText = user.name;
   document.getElementById("user-emoji").innerText = user.token;
   userPointMessage.innerHTML = `
-  <p>${user.name} wins!</p>
+  <p>${user.name} scores!</p>
   `;
 };
 
