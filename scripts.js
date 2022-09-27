@@ -80,24 +80,6 @@ function startNewGame() {
 
 //TRANSITIONS
 
-function hide(element) {
-  element.classList.add("hidden");
-};
-
-function show(element) {
-  element.classList.remove("hidden");
-};
-
-function fadeOut(element) {
-  element.classList.add("fadeout");
-};
-
-function removeFadeOut(element) {
-  element.classList.remove("fadeout");
-}
-
-//OTHER
-
 function transitionToNamePage() {
   mainVid.play();
   fadeOut(enterSitePage);
@@ -191,8 +173,37 @@ function endGame(player) {
   setTimeout(show, 15000, winnerMessage);
   setTimeout(fadeOut, 22000, winnerMessage);
   setTimeout(hide, 24000, winnerMessage);
-
   // setTimeout(refreshPage, 20000)
+};
+
+//UTILITIES
+
+function hide(element) {
+  element.classList.add("hidden");
+};
+
+function show(element) {
+  element.classList.remove("hidden");
+};
+
+function fadeOut(element) {
+  element.classList.add("fadeout");
+};
+
+function removeFadeOut(element) {
+  element.classList.remove("fadeout");
+};
+
+function pauseVid() {
+  mainVid.pause();
+};
+
+function resumeVid() {
+  mainVid.play();
+};
+
+function refreshPage() {
+  window.location.reload();
 };
 
 function updateCurrentMoves() {
@@ -215,18 +226,4 @@ function updatePoints() {
   compPoints.innerHTML = `
     <p>points: ${computerPlayer.wins}</p>
     `;
-};
-
-function pauseVid() {
-  mainVid.pause();
-};
-
-function resumeVid() {
-  mainVid.play();
-};
-
-
-
-function refreshPage() {
-  window.location.reload();
 };

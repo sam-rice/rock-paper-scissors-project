@@ -82,8 +82,6 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* ----------------------LANDING PAGE---------------------- */
-
 .main-vid {
   position: fixed;
   right: 0;
@@ -92,6 +90,8 @@ button:hover {
   min-height: auto;
   z-index: -1;
 }
+
+/* ----------------------LANDING PAGE---------------------- */
 
 .landing-message {
   font-family: 'MADEMirage-Black';
@@ -175,6 +175,7 @@ img {
 
 .moves:hover {
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 aside {
@@ -235,7 +236,7 @@ aside {
   max-height: auto;
 }
 
-/* ----------------------GAMEPLAY PAGE---------------------- */
+/* ----------------------WINNER ENDING PAGE---------------------- */
 
 .black-screen-message {
   display: flex;
