@@ -201,6 +201,10 @@ aside {
   border-radius: 30px;
 }
 
+.emoji {
+  font-size: 2em;
+}
+
 .change-game-button {
   animation: fadeIn 2s;
 }

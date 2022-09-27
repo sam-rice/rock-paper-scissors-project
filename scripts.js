@@ -26,8 +26,8 @@ var paper = document.getElementById("paper");
 var scissors = document.getElementById("scissors");
 var matches = document.getElementById("matches");
 var cup = document.getElementById("cup");
-var userWinsMessage = document.getElementById("user-winner");
-var compWinsMessage = document.getElementById("comp-winner");
+var userPointMessage = document.getElementById("user-point");
+var compPointMessage = document.getElementById("comp-point");
 var drawMessage = document.getElementById("draw");
 var userMove = document.getElementById("user-move");
 var compMove = document.getElementById("comp-move");
@@ -159,57 +159,21 @@ function transitionBackGameType() {
   setTimeout(show, 2000, matches);
 };
 
-function announceUserPoint() {
+function displayOutcome(element) {
   updateCurrentMoves();
   hide(gameplayPage);
   show(userMove);
   show(compMove);
-  show(userWinsMessage);
+  show(element);
   setTimeout(fadeOut, 2000, userMove);
   setTimeout(fadeOut, 2000, compMove);
-  setTimeout(fadeOut, 2000, userWinsMessage);
+  setTimeout(fadeOut, 2000, element);
   setTimeout(hide, 4000, userMove);
   setTimeout(hide, 4000, compMove);
-  setTimeout(hide, 4000, userWinsMessage);
+  setTimeout(hide, 4000, element);
   setTimeout(removeFadeOut, 4000, userMove);
   setTimeout(removeFadeOut, 4000, compMove);
-  setTimeout(removeFadeOut, 4000, userWinsMessage);
-  setTimeout(show, 3000, gameplayPage);
-};
-
-function announceCompPoint() {
-  updateCurrentMoves();
-  hide(gameplayPage);
-  show(userMove);
-  show(compMove);
-  show(compWinsMessage);
-  setTimeout(fadeOut, 2000, userMove);
-  setTimeout(fadeOut, 2000, compMove);
-  setTimeout(fadeOut, 2000, compWinsMessage);
-  setTimeout(hide, 4000, userMove);
-  setTimeout(hide, 4000, compMove);
-  setTimeout(hide, 4000, compWinsMessage);
-  setTimeout(removeFadeOut, 4000, userMove);
-  setTimeout(removeFadeOut, 4000, compMove);
-  setTimeout(removeFadeOut, 4000, compWinsMessage);
-  setTimeout(show, 3000, gameplayPage);
-};
-
-function announceDraw() {
-  updateCurrentMoves();
-  hide(gameplayPage);
-  show(userMove);
-  show(compMove);
-  show(drawMessage);
-  setTimeout(fadeOut, 2000, userMove);
-  setTimeout(fadeOut, 2000, compMove);
-  setTimeout(fadeOut, 2000, drawMessage);
-  setTimeout(hide, 4000, userMove);
-  setTimeout(hide, 4000, compMove);
-  setTimeout(hide, 4000, drawMessage);
-  setTimeout(removeFadeOut, 4000, userMove);
-  setTimeout(removeFadeOut, 4000, compMove);
-  setTimeout(removeFadeOut, 4000, drawMessage);
+  setTimeout(removeFadeOut, 4000, element);
   setTimeout(show, 3000, gameplayPage);
 };
 
@@ -239,7 +203,7 @@ function updateCurrentMoves() {
 function updateUserInfo() {
   document.getElementById("user-name").innerText = user.name;
   document.getElementById("user-emoji").innerText = user.token;
-  userWinsMessage.innerHTML = `
+  userPointMessage.innerHTML = `
   <p>${user.name} wins!</p>
   `;
 };

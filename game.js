@@ -13,7 +13,7 @@ class Game {
     this.makeCompMove();
     
     if (this.humanMove === this.computerMove) {
-      announceDraw();
+      displayOutcome(drawMessage);
       return;
     } else if (this.humanMove === "stone" && this.computerMove === "paper") {
       roundWinner = this.players[1];
@@ -68,9 +68,9 @@ class Game {
     };
 
     if (roundWinner === this.players[0]) {
-      announceUserPoint();
+      displayOutcome(userPointMessage);
     } else if (roundWinner === this.players[1]) {
-      announceCompPoint();
+      displayOutcome(compPointMessage);
     };
 
   };
