@@ -242,9 +242,9 @@ function updateUserInfo() {
 
 function updatePoints() {
   userPoints.innerHTML = `
-    <p>points: ${user.wins}</p>
+    <p>points: ${user.points}</p>
     `;
   compPoints.innerHTML = `
-    <p>points: ${computerPlayer.wins}</p>
+    <p>points: ${computerPlayer.points}</p>
     `;
 };

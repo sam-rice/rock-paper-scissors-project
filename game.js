@@ -55,11 +55,11 @@ class Game {
     } else if (this.humanMove === "matches" && this.computerMove === "cup") {
       roundWinner = this.players[1];
     };
-    roundWinner.wins++;
-    if (this.players[0].wins === 10) {
+    roundWinner.points++;
+    if (this.players[0].points === 10) {
       endGame(this.players[0]);
       return;
-    } else if (this.players[1].wins === 10) {
+    } else if (this.players[1].points === 10) {
       endGame(this.players[1]);
       return;
     };
