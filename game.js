@@ -11,9 +11,8 @@ class Game {
   checkWinner() {
     var roundWinner;
     this.makeCompMove();
-    
     if (this.humanMove === this.computerMove) {
-      announceDraw();
+      displayOutcome(drawMessage);
       return;
     } else if (this.humanMove === "stone" && this.computerMove === "paper") {
       roundWinner = this.players[1];
@@ -56,9 +55,7 @@ class Game {
     } else if (this.humanMove === "matches" && this.computerMove === "cup") {
       roundWinner = this.players[1];
     };
-
     roundWinner.wins++;
-
     if (this.players[0].wins === 10) {
       endGame(this.players[0]);
       return;
@@ -66,13 +63,11 @@ class Game {
       endGame(this.players[1]);
       return;
     };
-
     if (roundWinner === this.players[0]) {
-      announceUserWinner();
+      displayOutcome(userPointMessage);
     } else if (roundWinner === this.players[1]) {
-      announceCompWinner();
+      displayOutcome(compPointMessage);
     };
-
   };
 
   makeCompMove() {

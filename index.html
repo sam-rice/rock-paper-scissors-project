@@ -19,9 +19,9 @@
       <main class="hidden" id="main">
         <aside class="aside-left hidden" id="aside-left">
           <div class="aside-left-top">
-            <span class="user-span">
+            <span>
               <h2 id="user-name"></h2>
-              <p id="user-emoji"></p>
+              <p class="emoji" id="user-emoji"></p>
             </span>
             <span class="points-span" id="user-points">
               <p>points: 0</p>
@@ -59,16 +59,20 @@
                 <h3>basic</h3>
                 <p>stone beats scissors<br>
                 paper beats stone<br>
-                scissors beats paper</p>
+                scissors beats paper<br>
+                <br>
+                first to 10 points wins</p>
                 <button class="game-type-buttons" id="basic-button">basic</button>
               </section>
               <section class="advanced-mode-select">
                 <h3>advanced</h3>
                 <p>stone beats scissors & cup<br>
                   paper beats stone & cup<br>
-                  scissors beats paper & matches<br>
-                  cup beats scissors & matches<br>
-                  matches beats paper & stone</p>
+                  scissors beats paper & matchbook<br>
+                  cup beats scissors & matchbook<br>
+                  matchbook beats paper & stone<br>
+                  <br>
+                  first to 10 points wins</p>
                 <button class="game-type-buttons" id="advanced-button">advanced</button>
               </section>
             </div>
@@ -89,9 +93,9 @@
             <h2></h2>
             <div class="results-parent">
               <span class="user-move hidden" id="user-move"></span>
-              <span class="announce-winner hidden" id="user-winner">
+              <span class="announce-winner hidden" id="user-point">
               </span>
-              <span class="announce-winner hidden" id="comp-winner">
+              <span class="announce-winner hidden" id="comp-point">
                 <p>computer wins!</p>
               </span>
               <span class="announce-winner hidden" id="draw">
@@ -104,9 +108,9 @@
         </section>
         <aside class="aside-right hidden" id="aside-right">
           <div class="aside-right-top">
-            <span class="user-span">
+            <span>
               <h2>Computer</h2>
-              <p>🖥</p>
+              <p class="emoji">🖥</p>
             </span>
             <span class="points-span" id="comp-points">
             </span>
