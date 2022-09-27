@@ -78,7 +78,7 @@ gameplayPage.addEventListener("click", function (event) {
   if (event.target.id === "gameplay-page") {
     return;
   };
-  user.takeTurn(event.target.id)
+  user.takeTurn(event.target.id);
   updatePoints();
 });
 
@@ -95,7 +95,7 @@ function startNewGame() {
 
 //----------------------EVENT HANDLERS - DOM ----------------------//
 
-//TRANSITIONS
+//PAGE VIEW TRANSITIONS
 
 function transitionToNamePage() {
   mainVid.play();
@@ -190,7 +190,31 @@ function endGame(player) {
   setTimeout(show, 15000, winnerMessage);
   setTimeout(fadeOut, 22000, winnerMessage);
   setTimeout(hide, 24000, winnerMessage);
-  setTimeout(refreshPage, 54000);
+  setTimeout(refreshPage, 53000);
+};
+
+// DOM MISC
+
+function updateCurrentMoves() {
+  userMove.innerHTML = `<img src="assets/${currentGame.humanMove}-user.png" class="user-move">`;
+  compMove.innerHTML = `<img src="assets/${currentGame.computerMove}-comp.png" class="comp-move">`;
+};
+
+function updateUserInfo() {
+  document.getElementById("user-name").innerText = user.name;
+  document.getElementById("user-emoji").innerText = user.token;
+  userPointMessage.innerHTML = `
+  <p>${user.name} scores!</p>
+  `;
+};
+
+function updatePoints() {
+  userPoints.innerHTML = `
+    <p>points: ${user.points}</p>
+    `;
+  compPoints.innerHTML = `
+    <p>points: ${computerPlayer.points}</p>
+    `;
 };
 
 //UTILITIES
@@ -221,26 +245,4 @@ function resumeVid() {
 
 function refreshPage() {
   window.location.reload();
-};
-
-function updateCurrentMoves() {
-  userMove.innerHTML = `<img src="assets/${currentGame.humanMove}-user.png" class="user-move">`;
-  compMove.innerHTML = `<img src="assets/${currentGame.computerMove}-comp.png" class="comp-move">`;
-};
-
-function updateUserInfo() {
-  document.getElementById("user-name").innerText = user.name;
-  document.getElementById("user-emoji").innerText = user.token;
-  userPointMessage.innerHTML = `
-  <p>${user.name} scores!</p>
-  `;
-};
-
-function updatePoints() {
-  userPoints.innerHTML = `
-    <p>points: ${user.points}</p>
-    `;
-  compPoints.innerHTML = `
-    <p>points: ${computerPlayer.points}</p>
-    `;
 };

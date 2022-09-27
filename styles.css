@@ -20,7 +20,6 @@ html {
 
 body {
   position: fixed;
-  /* bottom: 0; */
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -34,9 +33,9 @@ header {
   font-family: 'MADEMirage-Black';
   font-size: 2.5vw;
   color: rgb(255, 136, 0);
+  height: 20%;
   margin-top: -20px;
   margin-bottom: -10px;
-  height: 20%;
   animation: fadeIn 1s;
 }
 
@@ -51,17 +50,16 @@ main {
   flex-direction: row;
   justify-content: space-around;
   min-height: 80%;
-  /* padding-right: 15px; */
   animation: fadeIn 1s;
 }
 
 .center-container, aside {
+  font-family: 'Jost';
+  color: white;
+  background-color: rgba(0, 0, 0, 0.65);
   border: 10px solid rgba(0, 0, 0, 0);
   border-radius: 30px;
   margin: 15px;
-  background-color: rgba(0, 0, 0, 0.65);
-  font-family: 'Jost';
-  color: white;
 }
 
 .center-container {
@@ -69,12 +67,12 @@ main {
 }
 
 button {
-  padding: 3px 20px 5px 20px;
+  font-family: 'Jost';
+  color: white;
   background-color: rgba(255, 136, 0, 0.721);
   border-radius: 10px;
   border-width: 0px;
-  font-family: 'Jost';
-  color: white;
+  padding: 3px 20px 5px 20px;
   cursor: pointer;
 }
 
@@ -149,8 +147,8 @@ button:hover {
 /* ----------------------ABOUT MODAL---------------------- */
 
 .modal-container {
-  height: 100%;
   background-color: #000000ab;
+  height: 100%;
   border: 0px;
 }
 
@@ -185,8 +183,6 @@ button:hover {
   padding: 20px 20px 20px 20px;
   border-radius: 5px;
 }
-
-/* .movie-modal-parent[open] */
 
 .movie-modal {
   display: flex;
@@ -268,10 +264,10 @@ aside {
 }
 
 .aside-right-top, .aside-left-top {
-  min-height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 60%;
 }
 
 .points-span {
@@ -323,9 +319,9 @@ aside {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 100%;
   font-family: 'MADEMirage-Black';
   color: rgb(255, 136, 0);
+  height: 100%;
   animation: fadeIn 4s;
 }
 
