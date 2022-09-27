@@ -177,7 +177,7 @@ function displayOutcome(element) {
   setTimeout(removeFadeOut, 4000, userMove);
   setTimeout(removeFadeOut, 4000, compMove);
   setTimeout(removeFadeOut, 4000, element);
-  setTimeout(show, 3000, gameplayPage);
+  setTimeout(show, 3500, gameplayPage);
 };
 
 function endGame(player) {
