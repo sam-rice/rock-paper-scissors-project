@@ -150,13 +150,51 @@ button:hover {
 
 /* UNHIDE CHOOSE-NAME-GRANDPARENT */
 
+.movie-info-grandparent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 2s;
+  height: 100%;
+}
+
 .movie-info-parent {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: black;
+  width: 55%;
+  padding: 20px 20px 20px 20px;
+  border-radius: 5px;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  min-height: 80%;
-  animation: fadeIn 2s;
+  height: 80%;
+  width: 100%;
+}
+
+.poster-container, .bio {
+  width: 45%;
+}
+
+.poster-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio {
+  padding: 50px 50px 50px 50px;
+}
+
+.poster {
+  filter: invert(0);
+  max-height: 450px;
 }
 
 /* ----------------------GAMEPLAY PAGE---------------------- */
@@ -223,7 +261,7 @@ aside {
   animation: fadeIn 2s;
 }
 
-.change-game-button, .movie-info {
+.change-game-button, .movie-info-button {
   min-width: 68%;
 }
 
