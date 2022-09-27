@@ -101,9 +101,9 @@ function transitionToNamePage() {
   mainVid.play();
   fadeOut(enterSitePage);
   setTimeout(hide, 1200, enterSitePage);
-  setTimeout(pauseVid, 51750);
-  setTimeout(show, 51750, mainHTML);
-  setTimeout(show, 51750, header);
+  setTimeout(pauseVid, 51600);
+  setTimeout(show, 51600, mainHTML);
+  setTimeout(show, 51600, header);
 };
 
 function transitionToGameTypes() {
@@ -190,7 +190,7 @@ function endGame(player) {
   setTimeout(show, 15000, winnerMessage);
   setTimeout(fadeOut, 22000, winnerMessage);
   setTimeout(hide, 24000, winnerMessage);
-  setTimeout(refreshPage, 34000);
+  setTimeout(refreshPage, 54000);
 };
 
 //UTILITIES
@@ -232,7 +232,7 @@ function updateUserInfo() {
   document.getElementById("user-name").innerText = user.name;
   document.getElementById("user-emoji").innerText = user.token;
   userPointMessage.innerHTML = `
-  <p>${user.name} wins!</p>
+  <p>${user.name} scores!</p>
   `;
 };
 
