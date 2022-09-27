@@ -20,12 +20,12 @@ html {
 
 body {
   position: fixed;
-  bottom: 0;
+  /* bottom: 0; */
   display: flex;
   flex-direction: column;
   text-align: center;
   height: 100%;
-  width: 100%;
+  width: 98.8%;
   background-color: black;
   z-index: 1;
 }
@@ -51,7 +51,7 @@ main {
   flex-direction: row;
   justify-content: space-around;
   min-height: 80%;
-  padding-right: 15px;
+  /* padding-right: 15px; */
   animation: fadeIn 1s;
 }
 
@@ -59,7 +59,7 @@ main {
   border: 10px solid rgba(0, 0, 0, 0);
   border-radius: 30px;
   margin: 15px;
-  background-color: rgba(0, 0, 0, 0.563);
+  background-color: rgba(0, 0, 0, 0.65);
   font-family: 'Jost';
   color: white;
 }
@@ -146,6 +146,83 @@ button:hover {
   min-width: 80%;
 }
 
+/* ----------------------ABOUT MODAL---------------------- */
+
+.modal-container {
+  height: 100%;
+  background-color: #000000ab;
+  border: 0px;
+}
+
+.modal-container[open] {
+  animation: fadeIn 2s;
+}
+
+.modal-container::backdrop {
+  opacity: 0;
+}
+
+.modal-container[closing] {
+  pointer-events: none;
+  inset: 0;
+  animation: fadeOut 2s;
+}
+
+.movie-modal-grandparent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.movie-modal-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #767676d9;
+  width: 55%;
+  padding: 20px 20px 20px 20px;
+  border-radius: 5px;
+}
+
+/* .movie-modal-parent[open] */
+
+.movie-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+}
+
+.poster-container, .bio {
+  width: 45%;
+}
+
+.poster-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio {
+  font-family: 'Jost';
+  color: white;
+  padding: 50px 50px 50px 50px;
+}
+
+.poster {
+  filter: invert(0);
+  max-width: 80%;
+}
+
+.close-modal-button {
+  margin-top: 10px;
+  margin-bottom: -7px;
+}
+
 /* ----------------------GAMEPLAY PAGE---------------------- */
 
 .gameplay-page-grandparent {
@@ -208,6 +285,10 @@ aside {
 
 .change-game-button {
   animation: fadeIn 2s;
+}
+
+.change-game-button, .open-modal-button {
+  min-width: 68%;
 }
 
 .results-grandparent {

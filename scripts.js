@@ -19,6 +19,11 @@ var userPoints = document.getElementById("user-points");
 var compPoints = document.getElementById("comp-points");
 var basicButton = document.getElementById("basic-button");
 var advancedButton = document.getElementById("advanced-button");
+
+var openModal = document.getElementById("open-modal");
+var closeModal = document.getElementById("close-modal");
+var modal = document.getElementById("movie-modal");
+
 var gameplayPage = document.getElementById("gameplay-page");
 var changeGameButton = document.getElementById("change-game");
 var stone = document.getElementById("stone");
@@ -44,6 +49,18 @@ submitNameButton.addEventListener("click", function () {
   startNewGame();
   transitionToGameTypes();
 });
+
+openModal.addEventListener("click", function () {
+  modal.showModal();
+});
+
+closeModal.addEventListener("click", function () {
+  modal.setAttribute("closing", "");
+  modal.addEventListener("animationend", function () {
+    modal.removeAttribute("closing");
+    modal.close();
+  }, {once: true});
+})
 
 basicButton.addEventListener("click", function () {
   currentGame.gameType = "basic";
@@ -117,6 +134,10 @@ function transitionToGameTypes() {
   setTimeout(pauseVid, 9000);
 };
 
+function transitionToMovieInfo() {
+
+};
+
 function transitionToGame() {
   fadeOut(gameTypePage);
   setTimeout(hide, 1800, gameTypePage);
@@ -156,7 +177,7 @@ function displayOutcome(element) {
   setTimeout(removeFadeOut, 4000, userMove);
   setTimeout(removeFadeOut, 4000, compMove);
   setTimeout(removeFadeOut, 4000, element);
-  setTimeout(show, 3000, gameplayPage);
+  setTimeout(show, 3500, gameplayPage);
 };
 
 function endGame(player) {
@@ -221,9 +242,9 @@ function updateUserInfo() {
 
 function updatePoints() {
   userPoints.innerHTML = `
-    <p>points: ${user.wins}</p>
+    <p>points: ${user.points}</p>
     `;
   compPoints.innerHTML = `
-    <p>points: ${computerPlayer.wins}</p>
+    <p>points: ${computerPlayer.points}</p>
     `;
 };
