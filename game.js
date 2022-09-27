@@ -68,9 +68,9 @@ class Game {
     };
 
     if (roundWinner === this.players[0]) {
-      announceUserWinner();
+      announceUserPoint();
     } else if (roundWinner === this.players[1]) {
-      announceCompWinner();
+      announceCompPoint();
     };
 
   };
