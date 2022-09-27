@@ -13,13 +13,17 @@ var submitNameButton = document.getElementById("submit-name");
 var nameInput = document.getElementById("name-input");
 var emojiInput = document.getElementById("emojis");
 var gameTypePage = document.getElementById("choose-game");
-var aboutButton = document.getElementById("movie-info");
 var asideLeft = document.getElementById("aside-left");
 var asideRight = document.getElementById("aside-right");
 var userPoints = document.getElementById("user-points");
 var compPoints = document.getElementById("comp-points");
 var basicButton = document.getElementById("basic-button");
 var advancedButton = document.getElementById("advanced-button");
+
+var openModal = document.getElementById("open-modal");
+var closeModal = document.getElementById("close-modal");
+var modal = document.getElementById("movie-modal");
+
 var gameplayPage = document.getElementById("gameplay-page");
 var changeGameButton = document.getElementById("change-game");
 var stone = document.getElementById("stone");
@@ -46,7 +50,17 @@ submitNameButton.addEventListener("click", function () {
   transitionToGameTypes();
 });
 
-aboutButton.addEventListener("click", transitionToMovieInfo);
+openModal.addEventListener("click", function () {
+  modal.showModal();
+});
+
+closeModal.addEventListener("click", function () {
+  modal.setAttribute("closing", "");
+  modal.addEventListener("animationend", function () {
+    modal.removeAttribute("closing");
+    modal.close();
+  }, {once: true});
+})
 
 basicButton.addEventListener("click", function () {
   currentGame.gameType = "basic";
