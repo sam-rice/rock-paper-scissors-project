@@ -4,6 +4,8 @@
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
 This application is a classic rock-paper-scissors game featuring video footage from the 1968 British independent film *if....*. The featured footage is from a scene in which several characters play a game of rock-paper-scissors (or "scissors-paper-stone"), and the design of the app features a minimal color palette inspired by the film's original theatrical poster. A user can select moves against a "computer" player, and the "player" who wins 10 rounds is declared the "winner" of the game. An "extended" game mode and a short writeup explaining the history of the film are also available within the app.
 
+[GitHub Pages Deployment Link](https://sam-rice.github.io/rock-paper-scissors-project/)
+
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 1. Fork this repository.
