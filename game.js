@@ -9,7 +9,7 @@ class Game {
   };
 
   checkWinner() {
-    var roundWinner;
+    let roundWinner;
     this.makeCompMove();
     if (this.humanMove === this.computerMove) {
       displayOutcome(drawMessage);

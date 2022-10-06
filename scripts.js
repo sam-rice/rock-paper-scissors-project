@@ -219,30 +219,10 @@ function updatePoints() {
 
 //UTILITIES
 
-function hide(element) {
-  element.classList.add("hidden");
-};
-
-function show(element) {
-  element.classList.remove("hidden");
-};
-
-function fadeOut(element) {
-  element.classList.add("fadeout");
-};
-
-function removeFadeOut(element) {
-  element.classList.remove("fadeout");
-};
-
-function pauseVid() {
-  mainVid.pause();
-};
-
-function resumeVid() {
-  mainVid.play();
-};
-
-function refreshPage() {
-  window.location.reload();
-};
+var hide = element => element.classList.add("hidden");
+var show = element => element.classList.remove("hidden");
+var fadeOut = element => element.classList.add("fadeout");
+var removeFadeOut = element => element.classList.remove("fadeout");
+var pauseVid = () => mainVid.pause();
+var resumeVid = () => mainVid.play();
+var refreshPage = () => window.location.reload();
