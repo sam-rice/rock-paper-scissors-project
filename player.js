@@ -6,7 +6,7 @@ class Player {
   };
 
   takeTurn(move) {
-    currentGame.humanMove = move;
+    currentGame.userMove = move;
     currentGame.checkWinner();
   }; 
 };
