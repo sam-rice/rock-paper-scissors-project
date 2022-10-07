@@ -1,60 +1,34 @@
 class Game {
-  constructor(humanPlayer, computerPlayer) {
-    this.players = [humanPlayer, computerPlayer]
+  constructor(user, computerPlayer) {
+    this.players = [user, computerPlayer]
     this.gameType = null
-    this.humanMove = null
+    this.userMove = null
     this.computerMove = null
-    this.basicMoves = ["stone", "paper", "scissors"]
-    this.advancedMoves = ["stone", "paper", "scissors", "matches", "cup"]
+    this.basic = ["stone", "paper", "scissors"]
+    this.advanced = ["stone", "paper", "scissors", "matches", "cup"]
   };
 
   checkWinner() {
-    var roundWinner;
+    let roundWinner;
     this.makeCompMove();
-    if (this.humanMove === this.computerMove) {
+    if (this.userMove === this.computerMove) {
       displayOutcome(drawMessage);
       return;
-    } else if (this.humanMove === "stone" && this.computerMove === "paper") {
-      roundWinner = this.players[1];
-    } else if (this.humanMove === "stone" && this.computerMove === "scissors") {
+    } else if ((this.userMove === "stone" && this.computerMove === "scissors") ||
+      (this.userMove === "stone" && this.computerMove === "cup") ||
+      (this.userMove === "paper" && this.computerMove === "stone") ||
+      (this.userMove === "paper" && this.computerMove === "cup") ||
+      (this.userMove === "scissors" && this.computerMove === "paper") ||
+      (this.userMove === "scissors" && this.computerMove === "matches") ||
+      (this.userMove === "cup" && this.computerMove === "scissors") ||
+      (this.userMove === "cup" && this.computerMove === "matches") ||
+      (this.userMove === "matches" && this.computerMove === "stone") ||
+      (this.userMove === "matches" && this.computerMove === "paper")) {
       roundWinner = this.players[0];
-    } else if (this.humanMove === "stone" && this.computerMove === "matches") {
-      roundWinner = this.players[1];
-    } else if (this.humanMove === "stone" && this.computerMove === "cup") {
-      roundWinner = this.players[0];
-    } else if (this.humanMove === "paper" && this.computerMove === "stone") {
-      roundWinner = this.players[0];
-    } else if (this.humanMove === "paper" && this.computerMove === "scissors") {
-      roundWinner = this.players[1];
-    } else if (this.humanMove === "paper" && this.computerMove === "matches") {
-      roundWinner = this.players[1];
-    } else if (this.humanMove === "paper" && this.computerMove === "cup") {
-      roundWinner = this.players[0];
-    } else if (this.humanMove === "scissors" && this.computerMove === "stone") {
-      roundWinner = this.players[1];
-    } else if (this.humanMove === "scissors" && this.computerMove === "paper") {
-      roundWinner = this.players[0];
-    } else if (this.humanMove === "scissors" && this.computerMove === "matches") {
-      roundWinner = this.players[0];
-    } else if (this.humanMove === "scissors" && this.computerMove === "cup") {
-      roundWinner = this.players[1];
-    } else if (this.humanMove === "cup" && this.computerMove === "stone") {
-      roundWinner = this.players[1];
-    } else if (this.humanMove === "cup" && this.computerMove === "paper") {
-      roundWinner = this.players[1];
-    } else if (this.humanMove === "cup" && this.computerMove === "scissors") {
-      roundWinner = this.players[0];
-    } else if (this.humanMove === "cup" && this.computerMove === "matches") {
-      roundWinner = this.players[0];
-    } else if (this.humanMove === "matches" && this.computerMove === "stone") {
-      roundWinner = this.players[0];
-    } else if (this.humanMove === "matches" && this.computerMove === "paper") {
-      roundWinner = this.players[0];
-    } else if (this.humanMove === "matches" && this.computerMove === "scissors") {
-      roundWinner = this.players[1];
-    } else if (this.humanMove === "matches" && this.computerMove === "cup") {
+    } else {
       roundWinner = this.players[1];
     };
+
     roundWinner.points++;
     if (this.players[0].points === 10) {
       endGame(this.players[0]);
@@ -71,10 +45,6 @@ class Game {
   };
 
   makeCompMove() {
-    if (this.gameType === "basic") {
-      this.computerMove = this.basicMoves[Math.floor(Math.random() * this.basicMoves.length)];
-    } else {
-      this.computerMove = this.advancedMoves[Math.floor(Math.random() * this.advancedMoves.length)];
-    };
+    this.computerMove = this[this.gameType][Math.floor(Math.random() * this[this.gameType].length)];
   };
 };

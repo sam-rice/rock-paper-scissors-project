@@ -45,7 +45,7 @@ var winnerMessage = document.getElementById("winner-message");
 enterSitePage.addEventListener("click", transitionToNamePage);
 
 submitNameButton.addEventListener("click", function () {
-  createHumanPlayer(nameInput.value, emojiInput.value);
+  createUserPlayer(nameInput.value, emojiInput.value);
   startNewGame();
   transitionToGameTypes();
 });
@@ -84,7 +84,7 @@ gameplayPage.addEventListener("click", function (event) {
 
 //----------------------EVENT HANDLERS - DATA ----------------------//
 
-function createHumanPlayer(name, emoji) {
+function createUserPlayer(name, emoji) {
   user = new Player (name, emoji);
   computerPlayer = new Player ("Computer", "🖥");
 };
@@ -196,7 +196,7 @@ function endGame(player) {
 // DOM MISC
 
 function updateCurrentMoves() {
-  userMove.innerHTML = `<img src="assets/${currentGame.humanMove}-user.png" class="user-move">`;
+  userMove.innerHTML = `<img src="assets/${currentGame.userMove}-user.png" class="user-move">`;
   compMove.innerHTML = `<img src="assets/${currentGame.computerMove}-comp.png" class="comp-move">`;
 };
 
@@ -219,30 +219,10 @@ function updatePoints() {
 
 //UTILITIES
 
-function hide(element) {
-  element.classList.add("hidden");
-};
-
-function show(element) {
-  element.classList.remove("hidden");
-};
-
-function fadeOut(element) {
-  element.classList.add("fadeout");
-};
-
-function removeFadeOut(element) {
-  element.classList.remove("fadeout");
-};
-
-function pauseVid() {
-  mainVid.pause();
-};
-
-function resumeVid() {
-  mainVid.play();
-};
-
-function refreshPage() {
-  window.location.reload();
-};
+var hide = element => element.classList.add("hidden");
+var show = element => element.classList.remove("hidden");
+var fadeOut = element => element.classList.add("fadeout");
+var removeFadeOut = element => element.classList.remove("fadeout");
+var pauseVid = () => mainVid.pause();
+var resumeVid = () => mainVid.play();
+var refreshPage = () => window.location.reload();
